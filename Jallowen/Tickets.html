@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Atracciones.html">Atracciones</a></li>
+        <li><a href="Monstruos.html">Mounstruos</a></li>
+        <li><a class="active" href="Tickets.html">Tickets</a></li>
+    </ul>
+
+      <div>
+            <div class="row g-3">
+                <div class="col">
+                <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Apellidos" aria-label="Last name">
+            </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label text">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Cantidad de entradas permitidas</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label text" for="exampleCheck1">Vip</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            </fieldset>
+          </form>
+    </div>
+</body>
+</html>
