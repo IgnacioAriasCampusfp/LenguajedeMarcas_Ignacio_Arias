@@ -1,0 +1,41 @@
+.Barra_Navegacion{
+
+    background-color: blueviolet;
+
+}
+
+body{
+    background-image: url("../img/Img\ Fondo.jpg");
+}
+.Barra_Navegacion a {
+    color: red;
+}
+
+.Titulo_Halloween{
+    color:springgreen;
+    text-align: center;
+}
+
+icon{
+    color: red;
+}
+
+.navbar-toggler-icon{
+
+background-color: transparent;
+}
+
+
+._img{
+    padding-top:4% ;    
+}
+
+.col-md-8{
+    text-align: center;
+    padding-top:8% ;    
+}
+
+._button{
+    text-align: center ;
+    margin-top: 8%;
+}

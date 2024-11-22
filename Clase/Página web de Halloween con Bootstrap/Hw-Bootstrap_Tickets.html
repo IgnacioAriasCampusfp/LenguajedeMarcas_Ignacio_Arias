@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Halloween con Bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Jquery, para el equivalente a .min.js// popper --> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class = "Barra_Navegacion navbar navbar-expand-lg ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="img/Img Calabaza Desplegable.png" class="navbar-toggler-icon">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Hw-Bootstrap_Index.html">Inicio <span class="sr-only">(actual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Hw-Bootstrap_Atracciones.html">Atracciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Hw-Bootstrap_Monstruos.html">Monstruos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Hw-Bootstrap_Tickets.html">Tickets</a>
+                </li>
+            </ul>
+    </nav>
+    <body>
+        <fieldset class="border p-4">
+            <legend class="w-auto text-white">Cuestionario De La Zona</legend>
+
+            <div class="form-group">
+                <label for="Entradas"><p>Cuantas entradas desea?</p></label>
+                <input type="text"  placeholder="Entradas" required>
+            </div>
+
+            <label>E-mail de registro:</label><input type="E-mail" placeholder="E-mail"><br><br>
+
+            <label>Tipo de entrada</label><br>
+
+            <input type="checkbox" name="VIP">VIP<br>
+            <input type="checkbox" name="Normal">Normal<br><br>
+
+            <button type="submit" class="btn btn-danger">Enviar</button>
+        </fieldset>
+
+
+                <!-- Campo para seleccionar el tipo de entrada -->
+                <div class="form-group">
+                    <label for="tipoEntrada">Tipo de Entrada:</label>
+                    <select class="form-control" id="tipoEntrada" name="tipoEntrada" required>
+                        <option value="">Seleccione un tipo de entrada</option>
+                        <option value="normal">Normal</option>
+                        <option value="vip">VIP</option>
+                    </select>
+                </div>
+    
+</body>
+</html>
