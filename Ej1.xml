@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE videojuegos SYSTEM "file:/C:/Users/CampusFP/Downloads/1%C2%BATrimestre/LenguajedeMarcas_Ignacio_Arias/Ej1.dtd"><videojuegos>
+    <videojuego>
+        <nombre>Titanfall 2</nombre>
+        <empresa>Respawn</empresa>
+        <plataforma>Todas las actuales</plataforma>
+        <duracion>10 horas</duracion>
+        <metacritic>89</metacritic>
+    </videojuego>
+    <videojuego>
+        <nombre>Factorio</nombre>
+        <empresa>Wube Software</empresa>
+        <plataforma>PC</plataforma>
+        <duracion>100 horas</duracion>
+        <metacritic>90</metacritic>
+    </videojuego>
+    <videojuego>
+        <nombre>Vampire Survivor</nombre>
+        <empresa>Poncle</empresa>
+        <plataforma>PC, movil</plataforma>
+        <duracion>50 horas</duracion>
+        <metacritic>86</metacritic>
+    </videojuego>
+
+</videojuegos>

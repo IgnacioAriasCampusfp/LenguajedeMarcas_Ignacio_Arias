@@ -1,0 +1,7 @@
+<!ELEMENT videojuegos (videojuego+)>
+<!ELEMENT videojuego (nombre, empresa, plataforma, duracion, metacritic)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT empresa (#PCDATA)>
+<!ELEMENT plataforma (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT metacritic (#PCDATA)>

@@ -1,0 +1,5 @@
+<!ELEMENT asignaturas (asignatura+)>
+<!ELEMENT asignatura (nombre, horas, profesor)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT horas (#PCDATA)>
+<!ELEMENT profesor (#PCDATA)>
