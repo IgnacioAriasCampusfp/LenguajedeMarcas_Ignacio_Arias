@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tienda SYSTEM "file:/C:/Users/CampusFP/Downloads/1%C2%BATrimestre/LenguajedeMarcas_Ignacio_Arias/tienda.dtd">
+<?xml-stylesheet type="text/xsl" href="file:/C:/Users/CampusFP/Downloads/1%C2%BATrimestre/LenguajedeMarcas_Ignacio_Arias/tienda.xsl"?>
+<tienda>
+  <producto id="1">
+    <nombre>Salchichón</nombre>
+    <pvp>12</pvp>
+    <descripcion>Salchichon iberico de Salamanca</descripcion>
+    <stock>20</stock>
+    <iva>10</iva>
+  </producto>
+  <producto id="2">
+    <nombre>Pechuga de pavo</nombre>
+    <pvp>7</pvp>
+    <descripcion>Pechuga de pavo al corte</descripcion>
+    <stock>32</stock>
+    <iva>10</iva>
+  </producto>
+<producto id="3">
+<nombre>Jamon iberico</nombre>
+<pvp>58</pvp>
+<descripcion>Prodcuto iberico 5j</descripcion>
+<stock>7</stock>
+<iva>21</iva>
+</producto>
+<producto id="4">
+<nombre>Queso</nombre>
+<pvp>12</pvp>
+<descripcion>Ques de Cabra</descripcion>
+<stock>45</stock>
+<iva>21</iva>
+</producto>
+</tienda>

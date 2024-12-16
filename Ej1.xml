@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE videojuegos SYSTEM "file:/C:/Users/CampusFP/Downloads/1%C2%BATrimestre/LenguajedeMarcas_Ignacio_Arias/Ej1.dtd"><videojuegos>
+<!DOCTYPE videojuegos SYSTEM "file:/C:/Users/CampusFP/Downloads/1%C2%BATrimestre/LenguajedeMarcas_Ignacio_Arias/Ej1.dtd">
+<?xml-stylesheet type="text/xsl" href="file:/C:/Users/CampusFP/Downloads/1%C2%BATrimestre/LenguajedeMarcas_Ignacio_Arias/Ej1.xsl"?><videojuegos>
     <videojuego>
         <nombre>Titanfall 2</nombre>
         <empresa>Respawn</empresa>
