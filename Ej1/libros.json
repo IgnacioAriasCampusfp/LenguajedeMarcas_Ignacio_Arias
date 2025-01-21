@@ -1,0 +1,39 @@
+[
+
+    {
+        "nombre" : "El camino de los reyes",
+        "autor" : "Brandon Sanderson",
+        "F_Publicacion" : 2010,
+        "paginas" : 1200,
+        "editorial" : "Nova"
+    },
+    {
+        "nombre" : "Juego de Tronos",
+        "autor" : "George R.R. Martin",
+        "F_Publicacion" : 1996,
+        "paginas" : 830,
+        "editorial" : "Gigamesh"
+    },
+    {
+        "nombre" : "Promesa de Sangre",
+        "autor" : "Brian McClellan",
+        "F_Publicacion" : 2021,
+        "paginas" : 550,
+        "editorial" : "Gamon"
+    },
+    {
+        "nombre" : "El hobbit",
+        "autor" : "Tolkien",
+        "F_Publicacion" : 1937,
+        "paginas" : 300,
+        "editorial" : "Minotauro"
+    },
+    {
+        "nombre" : "Metro 2033",
+        "autor" : "Dmitry Glukhocsky",
+        "F_Publicacion" : 2005,
+        "paginas" : 500,
+        "editorial" : "Timunmas"
+    }
+
+]

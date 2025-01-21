@@ -1,0 +1,11 @@
+{
+    "Curso":"1ºDAM",
+    "tutor":"Amelia",
+    "centro":"CampusFP Getafe",
+    "EsOficial":"true",
+    "asignaturas":["LM", "Programcion","Entornos","BBDD","Optativa","IPE","SI"],
+    "numeroAlumnos":25
+
+
+
+}
