@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar JSON</title>
+  <style>
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    #img_central{
+      display: block;
+      margin: auto;
+    }
+    table{
+      border-color: aqua;
+
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Datos desde JSON</h1>
+  <img id="img_central" src="Kaladin.jpg" alt="" width="70%" >
+
+  <div style="text-align:center; margin-bottom: 20px;">
+    <input type="text" id="nameFilter" placeholder="Filtrar por nombre" oninput="filterData()">
+    
+  </div>
+  <div id="data-container" style="text-align:center;">
+    <table border="3">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Autor</th>
+          <th>Fecha Publicación</th>
+          <th>Paginas</th>
+          <th>Editorial</th>
+        </tr>
+      </thead>
+      <tbody id="data-table-body">
+        <!-- Los datos se cargarán aquí -->
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
