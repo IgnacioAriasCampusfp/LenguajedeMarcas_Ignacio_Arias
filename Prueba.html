@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JokeAPI - Chistes Aleatorios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🤣 JokeAPI - Chistes Aleatorios</h2>
+
+        <label for="category">Categoría:</label>
+        <select id="category">
+            <option value="Any">Todas</option>
+            <option value="Programming">Programación</option>
+            <option value="Misc">Misceláneo</option>
+            <option value="Dark">Humor negro</option>
+            <option value="Pun">Juegos de palabras</option>
+            <option value="Spooky">Terror</option>
+            <option value="Christmas">Navidad</option>
+        </select>
+
+        <label for="language">Idioma:</label>
+        <select id="language">
+            <option value="en">Inglés</option>
+            <option value="es">Español</option>
+            <option value="de">Alemán</option>
+            <option value="fr">Francés</option>
+            <option value="pt">Portugués</option>
+            <option value="cs">Checo</option>
+        </select>
+
+        <button onclick="getJoke()">Obtener Chiste</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function getJoke() {
+            const category = document.getElementById("category").value;
+            const language = document.getElementById("language").value;
+            const url = `https://v2.jokeapi.dev/joke/${category}?lang=${language}`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status} ${response.statusText}`);
+                }
+                const data = await response.json();
+                displayJoke(data);
+            } catch (error) {
+                document.getElementById("result").innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+
+        function displayJoke(data) {
+            const resultDiv = document.getElementById("result");
+            if (data.type === "single") {
+                resultDiv.innerHTML = `<p>😂 ${data.joke}</p>`;
+            } else {
+                resultDiv.innerHTML = `<p>❓ ${data.setup}</p><p>👉 ${data.delivery}</p>`;
+            }
+        }
+    </script>
+
+</body>
+</html>
