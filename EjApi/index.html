@@ -3,21 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <title>Asturias</title>
 </head>
-<body>
+<body id="body">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Asturias</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galería <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reseñas.html">Reseñas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-2"></div>
-            <div class="col-sm-8 col-md-6 text">
-                <h2>Asturias</h2>
+            <div class="col-sm-8" >           
+                 <img src="img/asturiasProvincia.png" class="img-fluid" alt="" width="40%">
+            </div>
+        </div>
+        <div class="row">
+            
+
+            <h2 style="text-align: center;">Asturias</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 text ">
+               
                 <p>Asturias es una comunidad autónoma y provincia del norte de España, situada en la costa del mar Cantábrico. Su capital es Oviedo, y la ciudad más poblada es Gijón. Es conocida por su paisaje montañoso, su costa escarpada y su naturaleza verde, lo que le ha valido el apodo de "Paraíso Natural".
 
                     Históricamente, Asturias fue el núcleo del Reino de Asturias, cuna de la Reconquista en la Edad Media. La región mantiene una fuerte identidad cultural, con tradiciones como la sidra asturiana, la gaita y festividades populares. Su gastronomía destaca por platos como la fabada asturiana y los quesos, especialmente el Cabrales.
                     
                     Asturias cuenta con espacios naturales protegidos, como los Picos de Europa, y es un destino turístico ideal para el senderismo y el ecoturismo. Su economía se basa en la industria, la minería (en declive), la ganadería y el turismo.</p>
-                <img src="" class="img-fluid" alt="">
             </div>
         </div>
         <br>
@@ -25,15 +56,14 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8 text">
                 <h3>Ubicación en el mapa</h3>
-               <!--Iframe Asturias-->
-            </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d743664.5014412357!2d-6.5058304492848!3d43.27364413474618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368cfa609eb09d%3A0xf8b5f32b7dc69e3a!2sPrincipado%20de%20Asturias%2C%20Asturias!5e0!3m2!1ses!2ses!4v1738661324988!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
         </div>
         <br>
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8 text">
                 <h3>Información Meteorológica</h3>
-                <p id="clima">Cargando clima...</p>
+                <ul id="post-list"></ul>
             </div>
         </div>
     </div>

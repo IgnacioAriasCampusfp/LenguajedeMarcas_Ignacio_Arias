@@ -1,5 +1,5 @@
 const url = "https://www.el-tiempo.net/api/json/v2/provincias/33";
-
+const grado = "ºC";
 fetch(url)
     .then(response => {
         if (!response.ok) {
@@ -8,15 +8,14 @@ fetch(url)
         return response.json();
     })
     .then(data => {
-       // console.log("Datos recibidos:", data); /
-        const postList = document.getElementById('post-list');
+        const postolst = document.getElementById('post-list');
         
         if (Array.isArray(data.ciudades)) {
             data.ciudades.forEach(post => {
-                const li = document.createElement('li');
-                li.textContent = `${post.name}: ${post.nameProvince}`;
+                const ol = document.createElement('ol');
+                ol.textContent = `${post.name}: ${post.stateSky.description}, ${post.temperatures.max}${grado}`;
                 console.log("Datos:", post.body);
-                postList.appendChild(li);
+                postolst.appendChild(ol);
             });
         } else {
             console.log("No se encontró un array en los datos.");

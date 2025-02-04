@@ -1,0 +1,16 @@
+body{
+    background-color: aqua;
+    background-image: url("../img/Asturias.png");
+    text-align: center;
+}
+ol,p{
+    color: aliceblue;
+    text-shadow: 1px 0 0 black, 
+               0 1px 0 black, 
+              -1px 0 0 black, 
+               0 -1px 0 black;
+
+}
+.stars {
+    color: gold;
+}   
