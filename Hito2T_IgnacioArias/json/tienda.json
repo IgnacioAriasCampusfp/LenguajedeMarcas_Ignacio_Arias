@@ -1,0 +1,376 @@
+{
+    "2023": {
+        "Q1": [
+            {
+                "numero_pedido": "2023Q1-001",
+                "fecha_compra": "2023-01-15",
+                "fecha_entrega": "2023-01-20",
+                "total_factura": 120.50,
+                "cliente": {
+                    "nombre": "Carlos",
+                    "apellidos": "González Pérez",
+                    "telefono": "600123456",
+                    "direccion": {
+                        "calle": "Calle Mayor 12",
+                        "ciudad": "Madrid",
+                        "codigo_postal": "28001",
+                        "provincia": "Madrid"
+                    },
+                    "correo_electronico": "carlos.gonzalez@email.com"
+                },
+                "productos": [
+                    {
+                        "nombre_producto": "Comida para perros",
+                        "referencia": "PERRO-001",
+                        "precio": 25.00,
+                        "unidades": 2
+                    },
+                    {
+                        "nombre_producto": "Juguete para gatos",
+                        "referencia": "GATO-002",
+                        "precio": 10.50,
+                        "unidades": 3
+                    }
+                ]
+            },
+            {
+                "numero_pedido": "2023Q1-002",
+                "fecha_compra": "2023-02-10",
+                "fecha_entrega": "2023-02-15",
+                "total_factura": 75.00,
+                "cliente": {
+                    "nombre": "Laura",
+                    "apellidos": "Fernández López",
+                    "telefono": "600987654",
+                    "direccion": {
+                        "calle": "Avenida de la Paz 34",
+                        "ciudad": "Barcelona",
+                        "codigo_postal": "08002",
+                        "provincia": "Barcelona"
+                    },
+                    "correo_electronico": "laura.fernandez@email.com"
+                },
+                "productos": [
+                    {
+                        "nombre_producto": "Collar para perros",
+                        "referencia": "PERRO-003",
+                        "precio": 30.00,
+                        "unidades": 2
+                    },
+                    {
+                        "nombre_producto": "Cama para gatos",
+                        "referencia": "GATO-004",
+                        "precio": 45.00,
+                        "unidades": 1
+                    }
+                ]
+            }
+        ],
+        "Q2": [
+            {
+                "numero_pedido": "2023Q2-001",
+                "fecha_compra": "2023-04-10",
+                "fecha_entrega": "2023-04-15",
+                "total_factura": 85.30,
+                "cliente": {
+                    "nombre": "Laura",
+                    "apellidos": "Fernández López",
+                    "telefono": "600987654",
+                    "direccion": {
+                        "calle": "Avenida de la Paz 34",
+                        "ciudad": "Barcelona",
+                        "codigo_postal": "08002",
+                        "provincia": "Barcelona"
+                    },
+                    "correo_electronico": "laura.fernandez@email.com"
+                },
+                "productos": [
+                    {
+                        "nombre_producto": "Cama para perros",
+                        "referencia": "PERRO-007",
+                        "precio": 45.00,
+                        "unidades": 1
+                    },
+                    {
+                        "nombre_producto": "Juguete de cuerda",
+                        "referencia": "PERRO-008",
+                        "precio": 15.30,
+                        "unidades": 2
+                    }
+                ]
+            }
+        ],
+        "Q3": [
+            {
+                "numero_pedido": "2023Q3-001",
+                "fecha_compra": "2023-07-08",
+                "fecha_entrega": "2023-07-13",
+                "total_factura": 95.00,
+                "cliente": {
+                    "nombre": "Carlos",
+                    "apellidos": "González Pérez",
+                    "telefono": "600123456",
+                    "direccion": {
+                        "calle": "Calle Mayor 12",
+                        "ciudad": "Madrid",
+                        "codigo_postal": "28001",
+                        "provincia": "Madrid"
+                    },
+                    "correo_electronico": "carlos.gonzalez@email.com"
+                },
+                "productos": [
+                    {
+                        "nombre_producto": "Juguete interactivo",
+                        "referencia": "MASC-010",
+                        "precio": 35.00,
+                        "unidades": 2
+                    },
+                    {
+                        "nombre_producto": "Rascador para gatos",
+                        "referencia": "GATO-012",
+                        "precio": 60.00,
+                        "unidades": 1
+                    }
+                ]
+            }
+        ]
+    },
+    "2024": {
+        "Q1": [
+            {
+                "numero_pedido": "2024Q1-001",
+                "fecha_compra": "2024-01-05",
+                "fecha_entrega": "2024-01-10",
+                "total_factura": 120.00,
+                "cliente": {
+                    "nombre": "Carlos",
+                    "apellidos": "González Pérez",
+                    "telefono": "600123456",
+                    "direccion": {
+                        "calle": "Calle Mayor 12",
+                        "ciudad": "Madrid",
+                        "codigo_postal": "28001",
+                        "provincia": "Madrid"
+                    },
+                    "correo_electronico": "carlos.gonzalez@email.com"
+                },
+                "productos": [
+                    {
+                        "nombre_producto": "Collar para perros",
+                        "referencia": "PERRO-005",
+                        "precio": 40.00,
+                        "unidades": 2
+                    },
+                    {
+                        "nombre_producto": "Cama para perros",
+                        "referencia": "PERRO-006",
+                        "precio": 80.00,
+                        "unidades": 1
+                    }
+                ]
+            },
+            {
+                "numero_pedido": "2024Q1-002",
+                "fecha_compra": "2024-01-18",
+                "fecha_entrega": "2024-01-23",
+                "total_factura": 55.00,
+                "cliente": {
+                    "nombre": "Laura",
+                    "apellidos": "Fernández López",
+                    "telefono": "600987654",
+                    "direccion": {
+                        "calle": "Avenida de la Paz 34",
+                        "ciudad": "Barcelona",
+                        "codigo_postal": "08002",
+                        "provincia": "Barcelona"
+                    },
+                    "correo_electronico": "laura.fernandez@email.com"
+                },
+                "productos": [
+                    {
+                        "nombre_producto": "Juguete de cuerda",
+                        "referencia": "PERRO-009",
+                        "precio": 25.00,
+                        "unidades": 2
+                    },
+                    {
+                        "nombre_producto": "Rascador para gatos",
+                        "referencia": "GATO-014",
+                        "precio": 30.00,
+                        "unidades": 1
+                    }
+                ]
+            },
+            {
+                "numero_pedido": "2024Q1-003",
+                "fecha_compra": "2024-01-25",
+                "fecha_entrega": "2024-01-30",
+                "total_factura": 110.00,
+                "cliente": {
+                  "nombre": "Ana",
+                  "apellidos": "Martínez Sánchez",
+                  "telefono": "600112233",
+                  "direccion": {
+                    "calle": "Calle Ficticia 56",
+                    "ciudad": "Valencia",
+                    "codigo_postal": "46010",
+                    "provincia": "Valencia"
+                  },
+                  "correo_electronico": "ana.martinez@email.com"
+                },
+                "productos": [
+                  {
+                    "nombre_producto": "Juguete para perros",
+                    "referencia": "PERRO-020",
+                    "precio": 25.00,
+                    "unidades": 3
+                  },
+                  {
+                    "nombre_producto": "Cama para gatos",
+                    "referencia": "GATO-018",
+                    "precio": 55.00,
+                    "unidades": 1
+                  }
+                ]
+              }
+            ],
+        "Q2": [
+            {
+                "numero_pedido": "2024Q2-001",
+                "fecha_compra": "2024-04-02",
+                "fecha_entrega": "2024-04-07",
+                "total_factura": 135.00,
+                "cliente": {
+                    "nombre": "Carlos",
+                    "apellidos": "González Pérez",
+                    "telefono": "600123456",
+                    "direccion": {
+                        "calle": "Calle Mayor 12",
+                        "ciudad": "Madrid",
+                        "codigo_postal": "28001",
+                        "provincia": "Madrid"
+                    },
+                    "correo_electronico": "carlos.gonzalez@email.com"
+                },
+                "productos": [
+                    {
+                        "nombre_producto": "Juguete interactivo",
+                        "referencia": "MASC-012",
+                        "precio": 50.00,
+                        "unidades": 2
+                    },
+                    {
+                        "nombre_producto": "Cama para gatos",
+                        "referencia": "GATO-017",
+                        "precio": 35.00,
+                        "unidades": 1
+                    },
+                    {
+                        "nombre_producto": "Collar para gatos",
+                        "referencia": "GATO-013",
+                        "precio": 50.00,
+                        "unidades": 1
+                    }
+                ]
+            },
+            {
+                "numero_pedido": "2024Q2-002",
+                "fecha_compra": "2024-05-15",
+                "fecha_entrega": "2024-05-20",
+                "total_factura": 95.00,
+                "cliente": {
+                    "nombre": "Laura",
+                    "apellidos": "Fernández López",
+                    "telefono": "600987654",
+                    "direccion": {
+                        "calle": "Avenida de la Paz 34",
+                        "ciudad": "Barcelona",
+                        "codigo_postal": "08002",
+                        "provincia": "Barcelona"
+                    },
+                    "correo_electronico": "laura.fernandez@email.com"
+                },
+                "productos": [
+                    {
+                        "nombre_producto": "Cama para perros",
+                        "referencia": "PERRO-010",
+                        "precio": 65.00,
+                        "unidades": 1
+                    },
+                    {
+                        "nombre_producto": "Juguete de cuerda",
+                        "referencia": "PERRO-011",
+                        "precio": 30.00,
+                        "unidades": 1
+                    }
+                ]
+            },
+            {
+                "numero_pedido": "2024Q2-003",
+                "fecha_compra": "2024-05-02",
+                "fecha_entrega": "2024-05-07",
+                "total_factura": 120.00,
+                "cliente": {
+                    "nombre": "Luis",
+                    "apellidos": "Gómez Pérez",
+                    "telefono": "600334455",
+                    "direccion": {
+                        "calle": "Calle Sol 12",
+                        "ciudad": "Sevilla",
+                        "codigo_postal": "41001",
+                        "provincia": "Sevilla"
+                    },
+                    "correo_electronico": "luis.gomez@email.com"
+                },
+                "productos": [
+                    {
+                        "nombre_producto": "Collar para perros",
+                        "referencia": "PERRO-011",
+                        "precio": 40.00,
+                        "unidades": 2
+                    },
+                    {
+                        "nombre_producto": "Rascador para gatos",
+                        "referencia": "GATO-019",
+                        "precio": 40.00,
+                        "unidades": 1
+                    }
+                ]
+            }
+        ],
+    "Q3": [
+        {
+            "numero_pedido": "2024Q3-002",
+            "fecha_compra": "2024-07-20",
+            "fecha_entrega": "2024-07-25",
+            "total_factura": 95.00,
+            "cliente": {
+                "nombre": "Laura",
+                "apellidos": "Fernández López",
+                "telefono": "600987654",
+                "direccion": {
+                    "calle": "Avenida de la Paz 34",
+                    "ciudad": "Barcelona",
+                    "codigo_postal": "08002",
+                    "provincia": "Barcelona"
+                },
+                "correo_electronico": "laura.fernandez@email.com"
+            },
+            "productos": [
+                {
+                    "nombre_producto": "Juguete interactivo",
+                    "referencia": "MASC-015",
+                    "precio": 35.00,
+                    "unidades": 2
+                },
+                {
+                    "nombre_producto": "Cama para gatos",
+                    "referencia": "GATO-016",
+                    "precio": 60.00,
+                    "unidades": 1
+                }
+            ]
+        }
+    ]
+}
+}

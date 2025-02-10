@@ -1,0 +1,77 @@
+th,td{
+    text-align: center;
+}
+/* Estilo para la tabla de clientes */
+#tabla-clientes {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+#tabla-clientes th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+}
+
+#tabla-clientes td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para la tabla de pedidos */
+#tabla-pedidos {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#tabla-pedidos th {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+}
+
+#tabla-pedidos td {
+    padding: 12px;
+    border: 1px solid #007BFF;
+}
+
+/* Estilo para la tabla de productos */
+#tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff3cd;
+    font-family: Verdana, sans-serif;
+}
+
+#tabla-productos th {
+    background-color: #ff9800;
+    color: white;
+    padding: 12px;
+}
+
+#tabla-productos td {
+    padding: 10px;
+    border-bottom: 1px solid #ff9800;
+}
+
+/* Estilo para la tabla de factura */
+#tabla-factura {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #e7f1ff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#tabla-factura th {
+    background-color: #009688;
+    color: white;
+    padding: 12px;
+}
+
+#tabla-factura td {
+    padding: 12px;
+    border-bottom: 1px solid #009688;
+}

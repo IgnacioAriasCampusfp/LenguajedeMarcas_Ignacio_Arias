@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos y Facturas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2 class="text-center">Pedidos</h2>
+        <table class="table table-striped" id="tabla-pedidos">
+            <thead class="table-dark">
+                <tr>
+                    <th>Número de Pedido</th>
+                    <th>Fecha de Compra</th>
+                    <th>Fecha de Entrega</th>
+                    <th>Total Factura</th>
+                    <th>Cliente</th>
+                </tr>
+            </thead>
+            <tbody id="pedidos-body"></tbody>
+        </table>
+    
+        <h2 class="text-center">Clientes</h2>
+        <table class="table table-striped" id="tabla-clientes">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Correo Electrónico</th>
+                    <th>Dirección</th>
+                </tr>
+            </thead>
+            <tbody id="clientes-body"></tbody>
+        </table>
+    
+        <h2 class="text-center">Factura</h2>
+        <table class="table table-striped" id="tabla-factura">
+            <thead class="table-dark">
+                <tr>
+                    <th>Producto</th>
+                    <th>Referencia</th>
+                    <th>Precio</th>
+                    <th>Unidades</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="factura-body"></tbody>
+        </table>
+    
+        <h2 class="text-center">Productos Vendidos en Q1 2023 y Q3 2024</h2>
+        <table class="table table-striped" id="tabla-productos">
+            <thead class="table-dark">
+                <tr>
+                    <th>Producto</th>
+                    <th>Referencia</th>
+                    <th>Precio</th>
+                    <th>Unidades Vendidas</th>
+                </tr>
+            </thead>
+            <tbody id="productos-trimestres-body"></tbody>
+        </table>
+    </div>
+    
+
+    <script src="js/script.js"></script>
+</body>
+</html>
