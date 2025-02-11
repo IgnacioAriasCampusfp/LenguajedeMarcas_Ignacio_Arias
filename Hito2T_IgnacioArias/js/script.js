@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("json/tienda.json")
         .then(response => response.json())
         .then(data => {
-            mostrarPedidos(data);
-            mostrarClientes(data);
-            generarFactura(data["2024"]["Q1"][0]); // Factura del primer pedido de 2024 Q1
-            mostrarProductosTrimestres(data);
+            mostrarPedidos(data.pedido);
+            mostrarClientes(data.pedido);
+            generarFactura(data.pedido["2023"]["Q1"][0]); // Factura del primer pedido de 2023 Q1
+            mostrarProductosTrimestres(data.pedido);
         })
         .catch(error => console.error("Error al cargar los datos:", error));
 });
@@ -48,7 +48,7 @@ function mostrarClientes(data) {
                             <td>${pedido.cliente.nombre} ${pedido.cliente.apellidos}</td>
                             <td>${pedido.cliente.telefono}</td>
                             <td>${pedido.cliente.correo_electronico}</td>
-                            <td>${pedido.cliente.direccion.calle}, ${pedido.cliente.direccion.ciudad}</td>
+                            <td>${pedido.cliente.direccion.calle}, ${pedido.cliente.direccion.ciudad}, ${pedido.cliente.direccion.codigo_postal}, ${pedido.cliente.direccion.provincia}</td>
                         </tr>
                     `;
                 }
@@ -80,11 +80,9 @@ function mostrarProductosTrimestres(data) {
 
     let productos = {};
 
-    const trimestres = [data["2023"]["Q1"], data["2024"]["Q3"]];
-
-    trimestres.forEach(trimestre => {
-        if (trimestre) {
-            trimestre.forEach(pedido => {
+    for (const año in data) {
+        for (const trimestre in data[año]) {
+            data[año][trimestre].forEach(pedido => {
                 pedido.productos.forEach(producto => {
                     if (!productos[producto.referencia]) {
                         productos[producto.referencia] = { 
@@ -98,7 +96,7 @@ function mostrarProductosTrimestres(data) {
                 });
             });
         }
-    });
+    }
 
     for (const key in productos) {
         tbody.innerHTML += `
