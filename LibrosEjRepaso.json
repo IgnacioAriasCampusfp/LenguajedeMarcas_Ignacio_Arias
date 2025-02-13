@@ -1,0 +1,69 @@
+{
+    "catalogo": {
+        "libros": [
+            {
+                "titulo": "El Quijote",
+                "autor": "Miguel de Cervantes",
+                "anio": 1605,
+                "precio": {
+                    "moneda": "EUR",
+                    "cantidad": 25.99
+                }
+            },
+            {
+                "titulo": "Cien años de soledad",
+                "autor": "Gabriel García Márquez",
+                "anio": 1967,
+                "precio": {
+                    "moneda": "USD",
+                    "cantidad": 15.50
+                }
+            },
+            {
+                "titulo": "El nombre del viento",
+                "autor": "Patrick Rothfuss",
+                "anio": 2007,
+                "precio": {
+                    "moneda": "USD",
+                    "cantidad": 18.99
+                }
+            },
+            {
+                "titulo": "El temor de un hombre sabio",
+                "autor": "Patrick Rothfuss",
+                "anio": 2011,
+                "precio": {
+                    "moneda": "USD",
+                    "cantidad": 22.50
+                }
+            },
+            {
+                "titulo": "Juego de Tronos",
+                "autor": "George R.R. Martin",
+                "anio": 1996,
+                "precio": {
+                    "moneda": "USD",
+                    "cantidad": 25.00
+                }
+            },
+            {
+                "titulo": "El camino de los reyes",
+                "autor": "Brandon Sanderson",
+                "anio": 2010,
+                "precio": {
+                    "moneda": "USD",
+                    "cantidad": 27.99
+                }
+            },
+            {
+                "titulo": "Palabras radiantes",
+                "autor": "Brandon Sanderson",
+                "anio": 2014,
+                "precio": {
+                    "moneda": "USD",
+                    "cantidad": 29.50
+                }
+            }
+        ]
+    }
+}
