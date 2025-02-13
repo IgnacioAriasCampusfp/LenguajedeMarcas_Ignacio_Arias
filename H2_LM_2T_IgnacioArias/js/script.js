@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
             mostrarPedidos(data.pedido);
             mostrarClientes(data.pedido);
             generarFactura(data.pedido["2023"]["Q1"][0]); // Factura del primer pedido de 2023 Q1
-            mostrarProductosTrimestres(data.pedido);
+            mostrarProductosTrimestres(data.pedido, "2023", "Q1", "productos-trimestres-body");
+            mostrarProductosTrimestres(data.pedido, "2024", "Q4", "productos-trimestres-body");
         })
         .catch(error => console.error("Error al cargar los datos:", error));
 });
@@ -64,6 +65,7 @@ function generarFactura(pedido) {
     pedido.productos.forEach(producto => {
         tbody.innerHTML += `
             <tr>
+                <td>${pedido.cliente.nombre} ${pedido.cliente.apellidos}</td>
                 <td>${producto.nombre_producto}</td>
                 <td>${producto.referencia}</td>
                 <td>${producto.precio}€</td>
@@ -74,28 +76,26 @@ function generarFactura(pedido) {
     });
 }
 
-function mostrarProductosTrimestres(data) {
-    const tbody = document.getElementById("productos-trimestres-body");
-    tbody.innerHTML = "";
+function mostrarProductosTrimestres(data, año, trimestre, tbodyId) {
+    const tbody = document.getElementById(tbodyId);
 
     let productos = {};
 
-    for (const año in data) {
-        for (const trimestre in data[año]) {
-            data[año][trimestre].forEach(pedido => {
-                pedido.productos.forEach(producto => {
-                    if (!productos[producto.referencia]) {
-                        productos[producto.referencia] = { 
-                            nombre: producto.nombre_producto,
-                            referencia: producto.referencia,
-                            precio: producto.precio,
-                            unidades: 0
-                        };
-                    }
-                    productos[producto.referencia].unidades += producto.unidades;
-                });
+    if (data[año] && data[año][trimestre]) {
+        data[año][trimestre].forEach(pedido => {
+            pedido.productos.forEach(producto => {
+                if (!productos[producto.referencia]) {
+                    productos[producto.referencia] = { 
+                        nombre: producto.nombre_producto,
+                        referencia: producto.referencia,
+                        precio: producto.precio,
+                        unidades: 0,
+                        trimestre: `${año} ${trimestre}`
+                    };
+                }
+                productos[producto.referencia].unidades += producto.unidades;
             });
-        }
+        });
     }
 
     for (const key in productos) {
@@ -105,6 +105,7 @@ function mostrarProductosTrimestres(data) {
                 <td>${productos[key].referencia}</td>
                 <td>${productos[key].precio}€</td>
                 <td>${productos[key].unidades}</td>
+                <td>${productos[key].trimestre}</td>
             </tr>
         `;
     }
