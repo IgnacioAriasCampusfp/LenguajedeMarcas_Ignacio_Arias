@@ -1,4 +1,5 @@
 const url = "https://www.el-tiempo.net/api/json/v2/provincias/33";
+const max = 'Maxima:';
 const grado = "ºC";
 fetch(url)
     .then(response => {
@@ -9,11 +10,11 @@ fetch(url)
     })
     .then(data => {
         const postolst = document.getElementById('post-list');
-        
+
         if (Array.isArray(data.ciudades)) {
             data.ciudades.forEach(post => {
                 const ol = document.createElement('ol');
-                ol.textContent = `${post.name}: ${post.stateSky.description}, ${post.temperatures.max}${grado}`;
+                ol.textContent = `${post.name}: ${post.stateSky.description}, ${max} ,${post.temperatures.max}${grado}`;
                 console.log("Datos:", post.body);
                 postolst.appendChild(ol);
             });
