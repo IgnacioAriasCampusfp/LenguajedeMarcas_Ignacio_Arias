@@ -1,0 +1,6 @@
+<!ELEMENT notas (nota+)>
+<!ELEMENT nota (numero, resultado1, resultado2, resultado3)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT resultado1 (#PCDATA)>
+<!ELEMENT resultado2 (#PCDATA)>
+<!ELEMENT resultado3 (#PCDATA)>

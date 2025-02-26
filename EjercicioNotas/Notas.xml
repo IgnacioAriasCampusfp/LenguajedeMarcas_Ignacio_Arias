@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notas SYSTEM "file:/C:/Users/CampusFP/Downloads/1%C2%BATrimestre/LenguajedeMarcas_Ignacio_Arias/EjercicioNotas/Notas.dtd">
+<?xml-stylesheet type="text/xsl" href="file:/C:/Users/CampusFP/Downloads/1%C2%BATrimestre/LenguajedeMarcas_Ignacio_Arias/EjercicioNotas/Notas.xsl"?>
+<notas>
+  <nota>
+    <numero>Nota 1</numero>
+    <resultado1>5</resultado1>
+    <resultado2>10</resultado2>
+    <resultado3>6.5</resultado3>
+  </nota>
+<nota>
+    <numero>Nota 2</numero>
+    <resultado1>7</resultado1>
+    <resultado2>2</resultado2>
+    <resultado3>7.5</resultado3>
+  </nota>
+<nota>
+    <numero>Nota 3</numero>
+    <resultado1>4.5</resultado1>
+    <resultado2>8</resultado2>
+    <resultado3>7</resultado3>
+  </nota>
+<nota>
+    <numero>Media</numero>
+    <resultado1></resultado1>
+    <resultado2></resultado2>
+    <resultado3></resultado3>
+  </nota>
+</notas>
