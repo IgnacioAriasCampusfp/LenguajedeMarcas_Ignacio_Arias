@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Catalogo</h1>
+    <table id="data-table-body" border="1">
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+        </tr>
+    </table>
+    <script>
+        const jsonUrl ="JSON_LM_Examen_IgnacioArias.json";
+
+        fetch(jsonUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al cargar el archivo JSON');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Datos obtenidos:', data);
+                displayCatalog(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        function displayCatalog(data) {
+            const tabla = document.getElementById("data-table-body");
+            data.forEach(movil => {
+                const fila = document.createElement("tr");
+                fila.innerHTML = `
+                <td>${movil.marca}</td>
+                <td>${movil.modelo}</td>
+                <td>${movil.precio}</td>
+                <td><img src="${movil.imagen}" alt="${movil.imagen}"></td>
+                `;
+                tabla.appendChild(fila); 
+            });
+        }
+    </script>
+</body>
+
+</html>

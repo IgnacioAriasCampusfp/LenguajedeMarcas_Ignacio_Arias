@@ -1,0 +1,30 @@
+{
+    "catalogo": {
+        "movil":[
+            {
+                "marca": "Apple",
+                "modelo": "Iphone 123",
+                "precio": 15264,
+                "imagen": "movil1.jpg"
+            },
+            {
+                "marca": "Xiaomi",
+                "modelo": "Redmi Note 13",
+                "precio": 140,
+                "imagen": "movil2.jpg"
+            },
+            {
+                "marca": "Nokia",
+                "modelo": "Ladrillo",
+                "precio": 20,
+                "imagen": "movil3.jpg"
+            },
+            {
+                "marca": "Samsung",
+                "modelo": "Galaxy Note 123",
+                "precio": 1654,
+                "imagen": "movil4.jpg"
+            }
+        ]
+    }
+}
