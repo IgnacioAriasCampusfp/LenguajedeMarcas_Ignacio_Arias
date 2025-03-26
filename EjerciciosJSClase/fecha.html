@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecha con JavaScript</title>
+</head>
+<body>
+    <div id="fecha"></div>
+
+    <script>
+        // Obtener el elemento HTML donde se mostrará la fecha
+        var fechaElemento = document.getElementById("fecha");
+
+        // Obtener la fecha actual
+        var fechaActual = new Date();
+
+        // Función para obtener el nombre del día de la semana
+        function obtenerDiaSemana(dia) {
+            var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            return diasSemana[dia];
+        }
+
+        // Función para obtener el nombre del mes
+        function obtenerMes(mes) {
+            var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            return meses[mes];
+        }
+
+        // Crear una cadena de texto con la fecha
+        var fechaTexto = "Hoy es " + obtenerDiaSemana(fechaActual.getDay()) + ", " + fechaActual.getDate() + " de " + obtenerMes(fechaActual.getMonth()) + " de " + fechaActual.getFullYear() + ".";
+
+        // Mostrar la fecha en el elemento HTML
+        fechaElemento.textContent = fechaTexto;
+    </script>
+</body>
+</html>

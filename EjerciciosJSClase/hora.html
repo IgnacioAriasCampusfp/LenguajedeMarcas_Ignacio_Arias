@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang=“es”>
+<head>
+<meta charset="utf-8">
+<title>HolaMundo</title>
+<meta name="description" content=“HolaMundo”>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<p id="output" ></p>
+<script type="text/javascript">
+  let mensaje;
+    let hora = new Date().getHours();
+    if (hora < 13) {
+        mensaje = "buenos días";
+    } else if (hora < 21) {
+        mensaje = "buenas tardes";
+    } else if (hora < 24) {
+        mensaje = "buenas noches";
+    }
+    document.getElementById('output').innerHTML = mensaje;
+</script>
+</body>
+</html>

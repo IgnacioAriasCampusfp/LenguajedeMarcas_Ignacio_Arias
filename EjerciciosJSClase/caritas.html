@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang=“es”>
+<head>
+<meta charset="utf-8">
+<title>HolaMundo</title>
+<meta name="description" content=“HolaMundo”>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    img {
+        width: 60px;
+    }
+</style>
+</head>
+<body>
+<p id="output" ></p>
+<img id="carita"/>
+<script type="text/javascript">
+  const dia = new Date().getDay();
+  const mensaje = "Hoy es dia " + dia;
+  const imagenCarita = "img/carita"+dia+".png";
+    
+
+    document.getElementById('carita').src = imagenCarita;
+    document.getElementById('output').innerHTML = mensaje;
+</script>
+</body>
+</html>

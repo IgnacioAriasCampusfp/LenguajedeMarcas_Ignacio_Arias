@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Horario de Trabajo</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<table id="Tabla">
+    <tr>
+        <th></th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miercoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+    </tr>
+    <tr>
+        <td>9-10</td>
+        <td id="lunesprimera"></td>
+        <td id="martesprimera"></td>
+        <td id="miercolesprimera"></td>
+        <td id="juevesprimera"></td>
+        <td id="viernesprimera"></td>
+        
+    </tr>
+    <tr>
+        <td >10-11</td>
+        <td id="lunessegunda"></td>
+        <td id="martessegunda"></td>
+        <td id="miercolessegunda"></td>
+        <td id="juevessegunda"></td>
+        <td id="viernessegunda"></td>
+    </tr>
+    <tr>
+        <td>11-11.45</td>
+        <td id="lunestercera"></td>
+        <td id="martestercera"></td>
+        <td id="miercolestercera"></td>
+        <td id="juevestercera"></td>
+        <td id="viernestercera"></td>
+    </tr>
+    <tr>
+        <td>11.45 - 12.15</td>
+        <td colspan="5">Recreo</td>
+
+    </tr>
+    <tr>
+        <td>12-13</td>
+        <td id="lunescuarta"></td>
+        <td id="martescuarta"></td>
+        <td id="miercolescuarta"></td>
+        <td id="juevescuarta"></td>
+        <td id="viernescuarta"></td>
+    </tr>
+    <tr>
+        <td>13-14</td>
+        <td id="lunesquinta"></td>
+        <td id="martesquinta"></td>
+        <td id="miercolesquinta"></td>
+        <td id="juevesquinta"></td>
+        <td id="viernesquinta"></td>
+    </tr>
+    <tr>
+        <td>14-15</td>
+        <td id="lunessexta"></td>
+        <td id="martessexta"></td>
+        <td id="miercolessexta"></td>
+        <td id="juevessexta"></td>
+        <td id="viernessexta"></td>
+    </tr>
+</table>
+
+<script>
+    var dias = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes'];
+    var horas = ['primera', 'segunda', 'tercera','cuarta','quinta','sexta'];
+    console.log(horas.length)
+
+    for (var i = 0; i < dias.length; i++) {
+        for (var j = 0; j < horas.length; j++) {
+            var clase = prompt("Introduce el nombre de la clase para la hora  " + horas[j] + " del " + dias[i]);
+            var color = prompt("Introduce el color para la celda");
+            var celda = document.getElementById(dias[i] + horas[j]);
+            celda.innerHTML = clase;
+            celda.style.backgroundColor = color;
+        }
+    }
+</script>
+
+</body>
+</html>

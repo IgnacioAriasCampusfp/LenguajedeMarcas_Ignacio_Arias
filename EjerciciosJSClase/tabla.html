@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Horario de Trabajo</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<table id="Tabla">
+    <tr>
+        <th></th>
+        <th>Turno Comida</th>
+        <th>Turno Media Tarde</th>
+        <th>Turno Cena</th>
+    </tr>
+    <tr>
+        <td>Lunes</td>
+        <td id="lunesComida"></td>
+        <td id="lunesMediaTarde"></td>
+        <td id="lunesCena"></td>
+    </tr>
+    <tr>
+        <td id="martes">Martes</td>
+        <td id="martesComida"></td>
+        <td id="martesMediaTarde"></td>
+        <td id="martesCena"></td>
+    </tr>
+    <tr>
+        <td id="miercoles">Miércoles</td>
+        <td id="miercolesComida"></td>
+        <td id="miercolesMediaTarde"></td>
+        <td id="miercolesCena"></td>
+    </tr>
+    <tr>
+        <td id="jueves">Jueves</td>
+        <td id="juevesComida"></td>
+        <td id="juevesMediaTarde"></td>
+        <td id="juevesCena"></td>
+    </tr>
+    <tr>
+        <td id="viernes">Viernes</td>
+        <td id="viernesComida"></td>
+        <td id="viernesMediaTarde"></td>
+        <td id="viernesCena"></td>
+    </tr>
+    <tr>
+        <td id="sabado">Sábado</td>
+        <td id="sabadoComida"></td>
+        <td id="sabadoMediaTarde"></td>
+        <td id="sabadoCena"></td>
+    </tr>
+    <tr>
+        <td id="domingo">Domingo</td>
+        <td id="domingoComida"></td>
+        <td id="domingoMediaTarde"></td>
+        <td id="domingoCena"></td>
+    </tr>
+</table>
+
+<script>
+    var dias = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+    var turnos = ['Comida', 'MediaTarde', 'Cena'];
+
+    for (var i = 0; i < dias.length; i++) {
+        for (var j = 0; j < turnos.length; j++) {
+            var trabajador = prompt("Introduce el nombre del trabajador para el turno de " + turnos[j] + " del " + dias[i]);
+            var horas = prompt("Introduce las horas que " + trabajador + " trabaja en el turno de " + turnos[j] + " del " + dias[i]);
+            var color = prompt("Introduce el color para la celda");
+            var celda = document.getElementById(dias[i] + turnos[j]);
+            celda.innerHTML = trabajador + " (" + horas + " horas)";
+            celda.style.backgroundColor = color;
+        }
+    }
+</script>
+
+</body>
+</html>
