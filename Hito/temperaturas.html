@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,27 +30,46 @@
     <div class="container mt-5">
         <form id="dataSelectionForm">
             <div class="form-group">
-                <label for="indexSelect">Selecciona un índice:</label>
+                <label for="indexSelect">Selecciona una provincia:</label>
                 <select class="form-control" id="indexSelect">
                 </select>
             </div>
+            <div class="form-group mt-3">
+                <label for="municipioSelect">Selecciona un municipio:</label >
+                <select class="form-control" id="municipioSelect" >
+                </select>
+            </div>
         </form>
-        <table id="weather-table" class="table">
+
+        <!-- Tabla para mostrar los datos de la provincia -->
+        <table id="weather-table" class="table mt-4">
             <thead>
                 <tr>
                     <th>Provincia</th>
                     <th>Descripción del Clima</th>
                     <th>Temperatura Máxima (°C)</th>
                     <th>Temperatura Mínima (°C)</th>
-                    <th>Codigo de provincia</th>
+                    <th>Código de Provincia</th>
                 </tr>
             </thead>
             <tbody id="weather-data">
             </tbody>
         </table>
+        
+        <h3 class="mt-5">Datos de los Municipios</h3>
+        <table id="municipios-table" class="table">
+            <thead>
+                <tr>
+                    <th>Nombre del Municipio</th>
+                    <th>Superficie (km²)</th>
+                    <th>Perímetro (km)</th>
+                    <th>Población</th>
+                </tr>
+            </thead>
+            <tbody id="municipios-data">
+            </tbody>
+        </table>
     </div>
     <script src="script/scripts.js"></script>
-   
-
 </body>
 </html>

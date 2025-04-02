@@ -11,12 +11,9 @@ if (hora >= 6 && hora < 12) {
     
 }
 
-
-
-
 //Carrusel
 
-    let currentIndex = 0;
+let currentIndex = 0;
 const slides = document.querySelectorAll('.carousel-item');
 const indicatorsContainer = document.querySelector('.indicators');
 
@@ -56,43 +53,102 @@ setInterval(nextSlide, 6000);
 // Inicializar
 updateCarousel();
 
-
-// 
-  window.onload = function() {
+window.onload = function () {
     fetch('https://www.el-tiempo.net/api/json/v2/provincias')
         .then(response => response.json())
         .then(data => {
-            const provinces = data.provincias; // Cambiado a 'provincias'
+            const provinces = data.provincias;
             const provinceSelect = document.getElementById('indexSelect');
+            const municipioSelect = document.getElementById('municipioSelect');
+            const municipiosTableBody = document.getElementById('municipios-data');
+            const weatherTableBody = document.getElementById('weather-data');
+
+            // Agregar opción por defecto
+            provinceSelect.innerHTML = '<option value="">Selecciona una provincia</option>';
+
+            // Rellenar el select con las provincias
             provinces.forEach(province => {
                 const option = document.createElement('option');
-                option.value = province.CODPROV; // Usamos el código de la provincia como valor
-                option.text = province.NOMBRE_PROVINCIA; // Nombre de la provincia
+                option.value = province.CODPROV;
+                option.text = province.NOMBRE_PROVINCIA;
                 provinceSelect.appendChild(option);
             });
-            provinceSelect.addEventListener('change', function() {
-                const selectedProvince = provinces.find(province => province.CODPROV === this.value);
-                if (selectedProvince) {
-                    // Simulación de datos de clima (debes reemplazar esto con datos reales si la API los proporciona)
-                    const weatherData = {
-                        descripcionClima: "Despejado", // Cambiar por datos reales si están disponibles
-                        temperaturaMaxima: Math.floor(Math.random() * 35), // Simulación de temperatura máxima
-                        temperaturaMinima: Math.floor(Math.random() * 15) // Simulación de temperatura mínima
-                    };
 
-                    const weatherTableBody = document.getElementById('weather-data');
-                    weatherTableBody.innerHTML = `
-                        <tr>
-                            <td>${selectedProvince.NOMBRE_PROVINCIA}</td>
-                            <td>${weatherData.descripcionClima}</td>
-                            <td>${weatherData.temperaturaMaxima} °C</td>
-                            <td>${weatherData.temperaturaMinima} °C</td>
-                            <td>${selectedProvince.CODPROV}</td>
-                        </tr>
-                    `;
+            // Evento al cambiar la provincia seleccionada
+            provinceSelect.addEventListener('change', function () {
+                const selectedProvince = provinces.find(province => province.CODPROV === this.value);
+                if (!selectedProvince) {
+                    municipioSelect.innerHTML = '<option value="">Selecciona una provincia primero</option>';
+                    municipiosTableBody.innerHTML = '';
+                    weatherTableBody.innerHTML = '';
+                    return;
                 }
+
+                // Obtener municipios de la provincia seleccionada
+                fetch(`https://www.el-tiempo.net/api/json/v2/provincias/${selectedProvince.CODPROV}/municipios`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const municipios = data.municipios || [];
+                        municipioSelect.innerHTML = '<option value="">Selecciona un municipio</option>';
+                        municipiosTableBody.innerHTML = '';
+                        weatherTableBody.innerHTML = '';
+
+                        // Mostrar datos de la provincia en la tabla de clima
+                        weatherTableBody.innerHTML = `
+                            <tr>
+                                <td>${selectedProvince.NOMBRE_PROVINCIA}</td>
+                                <td>Despejado</td>
+                                <td>${Math.floor(Math.random() * 35)} °C</td>
+                                <td>${Math.floor(Math.random() * 15)} °C</td>
+                                <td>${selectedProvince.CODPROV}</td>
+                            </tr>
+                        `;
+
+                        // Llenar el select de municipios
+                        municipios.forEach(municipio => {
+                            const option = document.createElement('option');
+                            option.value = municipio.CODIGOINE;
+                            option.text = municipio.NOMBRE;
+                            municipioSelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => console.error('Error al obtener municipios:', error));
             });
-            provinceSelect.dispatchEvent(new Event('change')); // Trigger the change event to load the data initially
+
+            // Evento al seleccionar un municipio
+            municipioSelect.addEventListener('change', function () {
+                const selectedMunicipio = [...municipioSelect.options]
+                    .find(option => option.value === this.value);
+
+                if (!selectedMunicipio || selectedMunicipio.value === "") {
+                    municipiosTableBody.innerHTML = '';
+                    return;
+                }
+
+                // Obtener los datos del municipio seleccionado
+                const selectedProvince = provinceSelect.value;
+                fetch(`https://www.el-tiempo.net/api/json/v2/provincias/${selectedProvince}/municipios`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const municipios = data.municipios || [];
+                        municipiosTableBody.innerHTML = '';
+
+                        // Filtrar solo el municipio seleccionado
+                        const municipioSeleccionado = municipios.find(m => m.CODIGOINE === selectedMunicipio.value);
+
+                        if (municipioSeleccionado) {
+                            municipiosTableBody.innerHTML = `
+                                <tr style="background-color: #dff0d8;">
+                                    <td>${municipioSeleccionado.NOMBRE}</td>
+                                    <td>${municipioSeleccionado.SUPERFICIE || 'N/A'}</td>
+                                    <td>${municipioSeleccionado.PERIMETRO || 'N/A'}</td>
+                                    <td>${municipioSeleccionado.POBLACION_MUNI || 'N/A'}</td>
+                                </tr>
+                            `;
+                        }
+                    })
+                    .catch(error => console.error('Error al obtener municipios:', error));
+            });
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error al obtener provincias:', error));
 };
