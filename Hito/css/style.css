@@ -14,7 +14,7 @@ body{
 footer{
     background-color: rgb(181, 189, 78);
 }
-body {
+#temp {
     background-image: url('https://naukas.com/fx/uploads/2015/01/2015_01-Peninsula-fake.jpg');
     background-size: cover;
 }
