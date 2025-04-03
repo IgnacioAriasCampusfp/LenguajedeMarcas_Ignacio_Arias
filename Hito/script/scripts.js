@@ -1,59 +1,57 @@
-const hora = new Date().getHours();
-img = document.getElementById("hora");
-if (hora >= 6 && hora < 12) {
-    img.src = "img/SolSEDormido.png";
-}else if (hora >= 12 && hora < 15) {
-    img.src = "img/SolSEDespierto.png";  
-}else if (hora >= 15 && hora < 20) {
-    img.src = "img/SolSENormal.png";  
-}else{
-   img.src = "img/LunaSE.png";  
-    
-}
+document.addEventListener("DOMContentLoaded", function () {
+    // Cambio de imagen según la hora
+    const hora = new Date().getHours();
+    const img = document.getElementById("hora");
 
-//Carrusel
+    if (hora >= 6 && hora < 12) {
+        img.src = "img/SolSEDormido.png";
+    } else if (hora >= 12 && hora < 15) {
+        img.src = "img/SolSEDespierto.png";
+    } else if (hora >= 15 && hora < 20) {
+        img.src = "img/SolSENormal.png";
+    } else {
+        img.src = "img/LunaSE.png";
+    }
 
-let currentIndex = 0;
-const slides = document.querySelectorAll('.carousel-item');
-const indicatorsContainer = document.querySelector('.indicators');
+    // Carrusel
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const indicatorsContainer = document.querySelector('.indicators');
 
-// Crear indicadores
-slides.forEach((_, index) => {
-    const dot = document.createElement('div');
-    dot.addEventListener('click', () => goToSlide(index));
-    indicatorsContainer.appendChild(dot);
-});
-const indicators = document.querySelectorAll('.indicators div');
-
-function updateCarousel() {
-    slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentIndex);
-        indicators[index].classList.toggle('active', index === currentIndex);
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(dot);
     });
-}
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
+    const indicators = document.querySelectorAll('.indicators div');
+
+    function updateCarousel() {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentIndex);
+            indicators[index].classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+
+    setInterval(nextSlide, 6000);
     updateCarousel();
-}
 
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateCarousel();
-}
-
-function goToSlide(index) {
-    currentIndex = index;
-    updateCarousel();
-}
-
-// Cambio automático cada 3 segundos
-setInterval(nextSlide, 6000);
-
-// Inicializar
-updateCarousel();
-
-window.onload = function () {
+    // Obtener provincias y municipios y mostrar en la tabla
     fetch('https://www.el-tiempo.net/api/json/v2/provincias')
         .then(response => response.json())
         .then(data => {
@@ -62,19 +60,29 @@ window.onload = function () {
             const municipioSelect = document.getElementById('municipioSelect');
             const municipiosTableBody = document.getElementById('municipios-data');
             const weatherTableBody = document.getElementById('weather-data');
+            const provinceSearch = document.getElementById('provinceSearch');
+            const municipioSearch = document.getElementById('municipioSearch');
 
-            // Agregar opción por defecto
-            provinceSelect.innerHTML = '<option value="">Selecciona una provincia</option>';
+            function populateProvinces(filteredProvinces) {
+                provinceSelect.innerHTML = '<option value="">Selecciona una provincia</option>';
+                filteredProvinces.forEach(province => {
+                    const option = document.createElement('option');
+                    option.value = province.CODPROV;
+                    option.text = province.NOMBRE_PROVINCIA;
+                    provinceSelect.appendChild(option);
+                });
+            }
 
-            // Rellenar el select con las provincias
-            provinces.forEach(province => {
-                const option = document.createElement('option');
-                option.value = province.CODPROV;
-                option.text = province.NOMBRE_PROVINCIA;
-                provinceSelect.appendChild(option);
+            populateProvinces(provinces);
+
+            provinceSearch.addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase();
+                const filteredProvinces = provinces.filter(province =>
+                    province.NOMBRE_PROVINCIA.toLowerCase().includes(searchTerm)
+                );
+                populateProvinces(filteredProvinces);
             });
 
-            // Evento al cambiar la provincia seleccionada
             provinceSelect.addEventListener('change', function () {
                 const selectedProvince = provinces.find(province => province.CODPROV === this.value);
                 if (!selectedProvince) {
@@ -84,38 +92,48 @@ window.onload = function () {
                     return;
                 }
 
-                // Obtener municipios de la provincia seleccionada
-                fetch(`https://www.el-tiempo.net/api/json/v2/provincias/${selectedProvince.CODPROV}/municipios`)
+                fetch(`https://www.el-tiempo.net/api/json/v2/provincias/${selectedProvince.CODPROV}`)
                     .then(response => response.json())
                     .then(data => {
-                        const municipios = data.municipios || [];
-                        municipioSelect.innerHTML = '<option value="">Selecciona un municipio</option>';
-                        municipiosTableBody.innerHTML = '';
-                        weatherTableBody.innerHTML = '';
-
-                        // Mostrar datos de la provincia en la tabla de clima
                         weatherTableBody.innerHTML = `
                             <tr>
                                 <td>${selectedProvince.NOMBRE_PROVINCIA}</td>
-                                <td>Despejado</td>
-                                <td>${Math.floor(Math.random() * 35)} °C</td>
-                                <td>${Math.floor(Math.random() * 15)} °C</td>
+                                <td>${data.stateSky?.description || 'Desconocido'}</td>
+                                <td>${data.temperaturas?.max || 'N/A'} °C</td>
+                                <td>${data.temperaturas?.min || 'N/A'} °C</td>
                                 <td>${selectedProvince.CODPROV}</td>
                             </tr>
                         `;
+                    })
+                    .catch(error => console.error('Error al obtener datos meteorológicos:', error));
 
-                        // Llenar el select de municipios
-                        municipios.forEach(municipio => {
-                            const option = document.createElement('option');
-                            option.value = municipio.CODIGOINE;
-                            option.text = municipio.NOMBRE;
-                            municipioSelect.appendChild(option);
+                fetch(`https://www.el-tiempo.net/api/json/v2/provincias/${selectedProvince.CODPROV}/municipios`)
+                    .then(response => response.json())
+                    .then(data => {
+                        let municipios = data.municipios || [];
+                        function populateMunicipios(filteredMunicipios) {
+                            municipioSelect.innerHTML = '<option value="">Selecciona un municipio</option>';
+                            filteredMunicipios.forEach(municipio => {
+                                const option = document.createElement('option');
+                                option.value = municipio.CODIGOINE;
+                                option.text = municipio.NOMBRE;
+                                municipioSelect.appendChild(option);
+                            });
+                        }
+
+                        populateMunicipios(municipios);
+
+                        municipioSearch.addEventListener('input', function () {
+                            const searchTerm = this.value.toLowerCase();
+                            const filteredMunicipios = municipios.filter(municipio =>
+                                municipio.NOMBRE.toLowerCase().includes(searchTerm)
+                            );
+                            populateMunicipios(filteredMunicipios);
                         });
                     })
                     .catch(error => console.error('Error al obtener municipios:', error));
             });
 
-            // Evento al seleccionar un municipio
             municipioSelect.addEventListener('change', function () {
                 const selectedMunicipio = [...municipioSelect.options]
                     .find(option => option.value === this.value);
@@ -125,7 +143,6 @@ window.onload = function () {
                     return;
                 }
 
-                // Obtener los datos del municipio seleccionado
                 const selectedProvince = provinceSelect.value;
                 fetch(`https://www.el-tiempo.net/api/json/v2/provincias/${selectedProvince}/municipios`)
                     .then(response => response.json())
@@ -133,7 +150,6 @@ window.onload = function () {
                         const municipios = data.municipios || [];
                         municipiosTableBody.innerHTML = '';
 
-                        // Filtrar solo el municipio seleccionado
                         const municipioSeleccionado = municipios.find(m => m.CODIGOINE === selectedMunicipio.value);
 
                         if (municipioSeleccionado) {
@@ -151,4 +167,4 @@ window.onload = function () {
             });
         })
         .catch(error => console.error('Error al obtener provincias:', error));
-};
+});
