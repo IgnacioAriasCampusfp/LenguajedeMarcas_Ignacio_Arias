@@ -110,7 +110,7 @@ window.onload = function() {
                 }
             });
 
-            provinceSelect.dispatchEvent(new Event('change')); // Trigger the change event to load the data initially
+            provinceSelect.dispatchEvent(new Event('change')); // Invocar el evento de cambio para cargar las ciudades de la primera provincia
         })
         .catch(error => console.error('Error:', error));
 
